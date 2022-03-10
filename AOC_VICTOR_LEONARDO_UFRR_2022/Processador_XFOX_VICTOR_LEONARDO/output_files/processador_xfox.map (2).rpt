@@ -1,0 +1,672 @@
+Analysis & Synthesis report for processador_mason
+Thu Mar 10 09:35:54 2022
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis DSP Block Usage Summary
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Registers Packed Into Inferred Megafunctions
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0|altsyncram_c502:auto_generated
+ 16. Parameter Settings for Inferred Entity Instance: memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0
+ 17. altsyncram Parameter Settings by Entity Instance
+ 18. Port Connectivity Checks: "ual:port_map_ual|multiplicar:portMap_multiplicar"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Thu Mar 10 09:35:54 2022       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; processador_mason                           ;
+; Top-level Entity Name           ; processador_mason                           ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 24                                          ;
+; Total pins                      ; 70                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 32                                          ;
+; Total DSP Blocks                ; 1                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; processador_mason  ; processador_mason  ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 6           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                         ;
++----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path                         ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                                    ; Library ;
++----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; componentes/pc.vhd                                       ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/pc.vhd                                       ;         ;
+; componentes/addPC.vhd                                    ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/addPC.vhd                                    ;         ;
+; componentes/extensaoDeSinal4_8.vhd                       ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/extensaoDeSinal4_8.vhd                       ;         ;
+; componentes/controle.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/controle.vhd                                 ;         ;
+; componentes/registradores.vhd                            ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/registradores.vhd                            ;         ;
+; componentes/extensaoDeSinal2_8.vhd                       ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/extensaoDeSinal2_8.vhd                       ;         ;
+; componentes/multiplexador_2X1_8bits.vhd                  ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/multiplexador_2X1_8bits.vhd                  ;         ;
+; componentes/tempZero.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/tempZero.vhd                                 ;         ;
+; componentes/memoriaAdress.vhd                            ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/memoriaAdress.vhd                            ;         ;
+; componentes/portAND.vhd                                  ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/portAND.vhd                                  ;         ;
+; componentes/divisaoDeInstr.vhd                           ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/divisaoDeInstr.vhd                           ;         ;
+; componentes/adicionador.vhd                              ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/adicionador.vhd                              ;         ;
+; componentes/memoriaInst.vhd                              ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/memoriaInst.vhd                              ;         ;
+; componentes/subtrair.vhd                                 ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/subtrair.vhd                                 ;         ;
+; componentes/ual.vhd                                      ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd                                      ;         ;
+; componentes/multiplicar.vhd                              ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/multiplicar.vhd                              ;         ;
+; Processador_XFOX.vhd                                     ; yes             ; User VHDL File                                        ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd                                     ;         ;
+; altsyncram.tdf                                           ; yes             ; Megafunction                                          ; d:/intelfpga_lite20.1/quartus/libraries/megafunctions/altsyncram.tdf                                                                            ;         ;
+; stratix_ram_block.inc                                    ; yes             ; Megafunction                                          ; d:/intelfpga_lite20.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                                                     ;         ;
+; lpm_mux.inc                                              ; yes             ; Megafunction                                          ; d:/intelfpga_lite20.1/quartus/libraries/megafunctions/lpm_mux.inc                                                                               ;         ;
+; lpm_decode.inc                                           ; yes             ; Megafunction                                          ; d:/intelfpga_lite20.1/quartus/libraries/megafunctions/lpm_decode.inc                                                                            ;         ;
+; aglobal201.inc                                           ; yes             ; Megafunction                                          ; d:/intelfpga_lite20.1/quartus/libraries/megafunctions/aglobal201.inc                                                                            ;         ;
+; a_rdenreg.inc                                            ; yes             ; Megafunction                                          ; d:/intelfpga_lite20.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                                             ;         ;
+; altrom.inc                                               ; yes             ; Megafunction                                          ; d:/intelfpga_lite20.1/quartus/libraries/megafunctions/altrom.inc                                                                                ;         ;
+; altram.inc                                               ; yes             ; Megafunction                                          ; d:/intelfpga_lite20.1/quartus/libraries/megafunctions/altram.inc                                                                                ;         ;
+; altdpram.inc                                             ; yes             ; Megafunction                                          ; d:/intelfpga_lite20.1/quartus/libraries/megafunctions/altdpram.inc                                                                              ;         ;
+; db/altsyncram_c502.tdf                                   ; yes             ; Auto-Generated Megafunction                           ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/db/altsyncram_c502.tdf                                   ;         ;
+; db/processador_mason.ram0_memoriaAdress_e716e8fa.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/db/processador_mason.ram0_memoriaAdress_e716e8fa.hdl.mif ;         ;
++----------------------------------------------------------+-----------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                           ;
++---------------------------------------------+-----------------------------------------+
+; Resource                                    ; Usage                                   ;
++---------------------------------------------+-----------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 87                                      ;
+;                                             ;                                         ;
+; Combinational ALUT usage for logic          ; 147                                     ;
+;     -- 7 input functions                    ; 3                                       ;
+;     -- 6 input functions                    ; 23                                      ;
+;     -- 5 input functions                    ; 40                                      ;
+;     -- 4 input functions                    ; 50                                      ;
+;     -- <=3 input functions                  ; 31                                      ;
+;                                             ;                                         ;
+; Dedicated logic registers                   ; 24                                      ;
+;                                             ;                                         ;
+; I/O pins                                    ; 70                                      ;
+; Total MLAB memory bits                      ; 0                                       ;
+; Total block memory bits                     ; 32                                      ;
+;                                             ;                                         ;
+; Total DSP Blocks                            ; 1                                       ;
+;                                             ;                                         ;
+; Maximum fan-out node                        ; memoriaInst:port_map_memoriaInst|Mux1~0 ;
+; Maximum fan-out                             ; 43                                      ;
+; Total fan-out                               ; 907                                     ;
+; Average fan-out                             ; 2.83                                    ;
++---------------------------------------------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                         ;
++-----------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; Compilation Hierarchy Node                                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                         ; Entity Name             ; Library Name ;
++-----------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+; |processador_mason                                                          ; 147 (0)             ; 24 (0)                    ; 32                ; 1          ; 70   ; 0            ; |processador_mason                                                                                          ; processador_mason       ; work         ;
+;    |addPC:port_map_addPC|                                                   ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_mason|addPC:port_map_addPC                                                                     ; addPC                   ; work         ;
+;    |controle:port_map_controle|                                             ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_mason|controle:port_map_controle                                                               ; controle                ; work         ;
+;    |memoriaAdress:port_map_memoriaAdress|                                   ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |processador_mason|memoriaAdress:port_map_memoriaAdress                                                     ; memoriaAdress           ; work         ;
+;       |altsyncram:ram_rtl_0|                                                ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |processador_mason|memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0                                ; altsyncram              ; work         ;
+;          |altsyncram_c502:auto_generated|                                   ; 0 (0)               ; 0 (0)                     ; 32                ; 0          ; 0    ; 0            ; |processador_mason|memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0|altsyncram_c502:auto_generated ; altsyncram_c502         ; work         ;
+;    |memoriaInst:port_map_memoriaInst|                                       ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_mason|memoriaInst:port_map_memoriaInst                                                         ; memoriaInst             ; work         ;
+;    |multiplexador_2X1_8bits:port_map_multiplexador_2X1_8bits_br_ula|        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_mason|multiplexador_2X1_8bits:port_map_multiplexador_2X1_8bits_br_ula                          ; multiplexador_2X1_8bits ; work         ;
+;    |multiplexador_2X1_8bits:port_map_multiplexador_2X1_8bits_jump|          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_mason|multiplexador_2X1_8bits:port_map_multiplexador_2X1_8bits_jump                            ; multiplexador_2X1_8bits ; work         ;
+;    |multiplexador_2X1_8bits:port_map_multiplexador_2X1_8bits_memAdress_ula| ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_mason|multiplexador_2X1_8bits:port_map_multiplexador_2X1_8bits_memAdress_ula                   ; multiplexador_2X1_8bits ; work         ;
+;    |pc:port_map_pc|                                                         ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_mason|pc:port_map_pc                                                                           ; pc                      ; work         ;
+;    |registradores:port_map_registradores|                                   ; 30 (30)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |processador_mason|registradores:port_map_registradores                                                     ; registradores           ; work         ;
+;    |ual:port_map_ual|                                                       ; 62 (45)             ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |processador_mason|ual:port_map_ual                                                                         ; ual                     ; work         ;
+;       |adicionador:portMap_adicionador|                                     ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_mason|ual:port_map_ual|adicionador:portMap_adicionador                                         ; adicionador             ; work         ;
+;       |multiplicar:portMap_multiplicar|                                     ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |processador_mason|ual:port_map_ual|multiplicar:portMap_multiplicar                                         ; multiplicar             ; work         ;
+;       |subtrair:portMap_subtrair|                                           ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |processador_mason|ual:port_map_ual|subtrair:portMap_subtrair                                               ; subtrair                ; work         ;
++-----------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                            ;
++-----------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------------------------+
+; Name                                                                                                ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                                      ;
++-----------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------------------------+
+; memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0|altsyncram_c502:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 8            ; 8            ; 8            ; 8            ; 64   ; db/processador_mason.ram0_memoriaAdress_e716e8fa.hdl.mif ;
++-----------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------------------------------+
+
+
++-----------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary  ;
++---------------------------------+-------------+
+; Statistic                       ; Number Used ;
++---------------------------------+-------------+
+; Independent 9x9                 ; 1           ;
+; Total number of DSP blocks      ; 1           ;
+;                                 ;             ;
+; Fixed Point Unsigned Multiplier ; 1           ;
++---------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++----------------------------------------------------+-----------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal   ; Free of Timing Hazards ;
++----------------------------------------------------+-----------------------+------------------------+
+; ual:port_map_ual|zero                              ; ual:port_map_ual|Mux0 ; yes                    ;
+; ual:port_map_ual|in_tempZero                       ; ual:port_map_ual|Mux2 ; yes                    ;
+; Number of user-specified and inferred latches = 2  ;                       ;                        ;
++----------------------------------------------------+-----------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                           ;
++-----------------------------------------------------+----------------------------------------+
+; Register name                                       ; Reason for Removal                     ;
++-----------------------------------------------------+----------------------------------------+
+; registradores:port_map_registradores|registrador~27 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~35 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~28 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~36 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~29 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~37 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~30 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~38 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~31 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~39 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~32 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~40 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~33 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~41 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~34 ; Stuck at GND due to stuck port data_in ;
+; registradores:port_map_registradores|registrador~42 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 16              ;                                        ;
++-----------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 24    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                               ;
++----------------------------------------------------+------------------------------------------------+------+
+; Register Name                                      ; Megafunction                                   ; Type ;
++----------------------------------------------------+------------------------------------------------+------+
+; memoriaAdress:port_map_memoriaAdress|portOUT[0..7] ; memoriaAdress:port_map_memoriaAdress|ram_rtl_0 ; RAM  ;
++----------------------------------------------------+------------------------------------------------+------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |processador_mason|pc:port_map_pc|portOUT[3] ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; No         ; |processador_mason|ual:port_map_ual|Mux5     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Source assignments for memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0|altsyncram_c502:auto_generated ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                 ;
++---------------------------------+--------------------+------+---------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0     ;
++------------------------------------+----------------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                                    ; Type           ;
++------------------------------------+----------------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                                        ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                                       ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                                      ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                                       ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                                      ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                                        ; Untyped        ;
+; OPERATION_MODE                     ; DUAL_PORT                                                ; Untyped        ;
+; WIDTH_A                            ; 8                                                        ; Untyped        ;
+; WIDTHAD_A                          ; 3                                                        ; Untyped        ;
+; NUMWORDS_A                         ; 8                                                        ; Untyped        ;
+; OUTDATA_REG_A                      ; UNREGISTERED                                             ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                                     ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                                     ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                                     ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                                     ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                                     ; Untyped        ;
+; WIDTH_B                            ; 8                                                        ; Untyped        ;
+; WIDTHAD_B                          ; 3                                                        ; Untyped        ;
+; NUMWORDS_B                         ; 8                                                        ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                                   ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                                   ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK0                                                   ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK0                                                   ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                             ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                                   ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                                     ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                                     ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                                     ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                                     ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                                     ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                                     ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                                        ; Untyped        ;
+; WIDTH_BYTEENA_B                    ; 1                                                        ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                                     ; Untyped        ;
+; BYTE_SIZE                          ; 8                                                        ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                 ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                                     ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                                     ; Untyped        ;
+; INIT_FILE                          ; db/processador_mason.ram0_memoriaAdress_e716e8fa.hdl.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                                   ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 0                                                        ; Untyped        ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                                                   ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                                   ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                                                   ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                                   ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                          ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                          ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                                    ; Untyped        ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                    ; Untyped        ;
+; WIDTH_ECCSTATUS                    ; 3                                                        ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone V                                                ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_c502                                          ; Untyped        ;
++------------------------------------+----------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                      ;
++-------------------------------------------+-----------------------------------------------------------+
+; Name                                      ; Value                                                     ;
++-------------------------------------------+-----------------------------------------------------------+
+; Number of entity instances                ; 1                                                         ;
+; Entity Instance                           ; memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                 ;
+;     -- WIDTH_A                            ; 8                                                         ;
+;     -- NUMWORDS_A                         ; 8                                                         ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                              ;
+;     -- WIDTH_B                            ; 8                                                         ;
+;     -- NUMWORDS_B                         ; 8                                                         ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                    ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                              ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                      ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                                  ;
++-------------------------------------------+-----------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ual:port_map_ual|multiplicar:portMap_multiplicar"                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; portout[15..8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 24                          ;
+;     ENA               ; 16                          ;
+;     plain             ; 8                           ;
+; arriav_lcell_comb     ; 148                         ;
+;     arith             ; 25                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 8                           ;
+;         4 data inputs ; 12                          ;
+;         5 data inputs ; 4                           ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 120                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 11                          ;
+;         4 data inputs ; 38                          ;
+;         5 data inputs ; 36                          ;
+;         6 data inputs ; 23                          ;
+; arriav_mac            ; 1                           ;
+; boundary_port         ; 70                          ;
+; stratixv_ram_block    ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 6.50                        ;
+; Average LUT depth     ; 4.86                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Thu Mar 10 09:35:41 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador_mason -c processador_mason
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/pc.vhd
+    Info (12022): Found design unit 1: pc-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/pc.vhd Line: 12
+    Info (12023): Found entity 1: pc File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/pc.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/addpc.vhd
+    Info (12022): Found design unit 1: addPC-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/addPC.vhd Line: 14
+    Info (12023): Found entity 1: addPC File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/addPC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/extensaodesinal4_8.vhd
+    Info (12022): Found design unit 1: extensaoDeSinal4_8-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/extensaoDeSinal4_8.vhd Line: 11
+    Info (12023): Found entity 1: extensaoDeSinal4_8 File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/extensaoDeSinal4_8.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/controle.vhd
+    Info (12022): Found design unit 1: controle-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/controle.vhd Line: 19
+    Info (12023): Found entity 1: controle File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/controle.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/registradores.vhd
+    Info (12022): Found design unit 1: registradores-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/registradores.vhd Line: 16
+    Info (12023): Found entity 1: registradores File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/registradores.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/extensaodesinal2_8.vhd
+    Info (12022): Found design unit 1: extensaoDeSinal2_8-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/extensaoDeSinal2_8.vhd Line: 11
+    Info (12023): Found entity 1: extensaoDeSinal2_8 File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/extensaoDeSinal2_8.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/multiplexador_2x1_8bits.vhd
+    Info (12022): Found design unit 1: multiplexador_2X1_8bits-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/multiplexador_2X1_8bits.vhd Line: 13
+    Info (12023): Found entity 1: multiplexador_2X1_8bits File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/multiplexador_2X1_8bits.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/tempzero.vhd
+    Info (12022): Found design unit 1: tempZero-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/tempZero.vhd Line: 11
+    Info (12023): Found entity 1: tempZero File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/tempZero.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/memoriaadress.vhd
+    Info (12022): Found design unit 1: memoriaAdress-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/memoriaAdress.vhd Line: 17
+    Info (12023): Found entity 1: memoriaAdress File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/memoriaAdress.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/portand.vhd
+    Info (12022): Found design unit 1: portAND-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/portAND.vhd Line: 12
+    Info (12023): Found entity 1: portAND File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/portAND.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/divisaodeinstr.vhd
+    Info (12022): Found design unit 1: divisaoDeInstr-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/divisaoDeInstr.vhd Line: 13
+    Info (12023): Found entity 1: divisaoDeInstr File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/divisaoDeInstr.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/adicionador.vhd
+    Info (12022): Found design unit 1: adicionador-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/adicionador.vhd Line: 13
+    Info (12023): Found entity 1: adicionador File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/adicionador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/memoriainst.vhd
+    Info (12022): Found design unit 1: memoriaInst-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/memoriaInst.vhd Line: 13
+    Info (12023): Found entity 1: memoriaInst File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/memoriaInst.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/subtrair.vhd
+    Info (12022): Found design unit 1: subtrair-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/subtrair.vhd Line: 13
+    Info (12023): Found entity 1: subtrair File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/subtrair.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/ual.vhd
+    Info (12022): Found design unit 1: ual-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 16
+    Info (12023): Found entity 1: ual File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file componentes/multiplicar.vhd
+    Info (12022): Found design unit 1: multiplicar-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/multiplicar.vhd Line: 13
+    Info (12023): Found entity 1: multiplicar File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/multiplicar.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file processador_xfox.vhd
+    Info (12022): Found design unit 1: processador_mason-behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 22
+    Info (12023): Found entity 1: processador_mason File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 4
+Info (12127): Elaborating entity "processador_mason" for the top level hierarchy
+Info (12128): Elaborating entity "addPC" for hierarchy "addPC:port_map_addPC" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 198
+Warning (10492): VHDL Process Statement warning at addPC.vhd(19): signal "portIN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/addPC.vhd Line: 19
+Info (12128): Elaborating entity "pc" for hierarchy "pc:port_map_pc" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 200
+Info (12128): Elaborating entity "memoriaInst" for hierarchy "memoriaInst:port_map_memoriaInst" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 202
+Warning (10492): VHDL Process Statement warning at memoriaInst.vhd(100): signal "portIN" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/memoriaInst.vhd Line: 100
+Info (12128): Elaborating entity "divisaoDeInstr" for hierarchy "divisaoDeInstr:port_map_divisaoDeInstr" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 204
+Info (12128): Elaborating entity "controle" for hierarchy "controle:port_map_controle" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 206
+Warning (10492): VHDL Process Statement warning at controle.vhd(23): signal "OPcode" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/controle.vhd Line: 23
+Info (12128): Elaborating entity "registradores" for hierarchy "registradores:port_map_registradores" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 208
+Warning (10492): VHDL Process Statement warning at registradores.vhd(29): signal "registrador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/registradores.vhd Line: 29
+Warning (10492): VHDL Process Statement warning at registradores.vhd(29): signal "enderecoRegA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/registradores.vhd Line: 29
+Warning (10492): VHDL Process Statement warning at registradores.vhd(30): signal "registrador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/registradores.vhd Line: 30
+Warning (10492): VHDL Process Statement warning at registradores.vhd(30): signal "enderecoRegB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/registradores.vhd Line: 30
+Info (12128): Elaborating entity "extensaoDeSinal2_8" for hierarchy "extensaoDeSinal2_8:port_map_extensaoDeSinal2_8" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 210
+Info (12128): Elaborating entity "multiplexador_2X1_8bits" for hierarchy "multiplexador_2X1_8bits:port_map_multiplexador_2X1_8bits_br_ula" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 212
+Info (12128): Elaborating entity "ual" for hierarchy "ual:port_map_ual" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 214
+Warning (10541): VHDL Signal Declaration warning at ual.vhd(12): used implicit default value for signal "overflow" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 12
+Warning (10492): VHDL Process Statement warning at ual.vhd(67): signal "ALUOP" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at ual.vhd(69): signal "resultadoAdicionador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 69
+Warning (10492): VHDL Process Statement warning at ual.vhd(73): signal "resultadoAdicionador" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at ual.vhd(77): signal "resultadotSubtrair" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at ual.vhd(80): signal "resultadotSubtrair" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 80
+Warning (10492): VHDL Process Statement warning at ual.vhd(83): signal "portINA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 83
+Warning (10492): VHDL Process Statement warning at ual.vhd(86): signal "portINA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 86
+Warning (10492): VHDL Process Statement warning at ual.vhd(90): signal "portINB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at ual.vhd(93): signal "out_tempZero" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at ual.vhd(101): signal "out_tempZero" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 101
+Warning (10492): VHDL Process Statement warning at ual.vhd(109): signal "portINA" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at ual.vhd(109): signal "portINB" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at ual.vhd(118): signal "out_multiplicar" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 118
+Warning (10631): VHDL Process Statement warning at ual.vhd(65): inferring latch(es) for signal or variable "zero", which holds its previous value in one or more paths through the process File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 65
+Warning (10631): VHDL Process Statement warning at ual.vhd(65): inferring latch(es) for signal or variable "in_tempZero", which holds its previous value in one or more paths through the process File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 65
+Info (10041): Inferred latch for "in_tempZero" at ual.vhd(65) File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 65
+Info (10041): Inferred latch for "zero" at ual.vhd(65) File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 65
+Info (12128): Elaborating entity "tempZero" for hierarchy "ual:port_map_ual|tempZero:portMap_tempZero" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 61
+Info (12128): Elaborating entity "multiplicar" for hierarchy "ual:port_map_ual|multiplicar:portMap_multiplicar" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 62
+Info (12128): Elaborating entity "adicionador" for hierarchy "ual:port_map_ual|adicionador:portMap_adicionador" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 63
+Info (12128): Elaborating entity "subtrair" for hierarchy "ual:port_map_ual|subtrair:portMap_subtrair" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 64
+Info (12128): Elaborating entity "memoriaAdress" for hierarchy "memoriaAdress:port_map_memoriaAdress" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 216
+Info (12128): Elaborating entity "extensaoDeSinal4_8" for hierarchy "extensaoDeSinal4_8:port_map_extensaoDeSinal4_8" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 220
+Info (12128): Elaborating entity "portAND" for hierarchy "portAND:port_map_portAND" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 222
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "registradores:port_map_registradores|registrador" is uninferred due to inappropriate RAM size File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/registradores.vhd Line: 19
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276029): Inferred altsyncram megafunction from the following design logic: "memoriaAdress:port_map_memoriaAdress|ram_rtl_0" 
+        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
+        Info (286033): Parameter WIDTH_A set to 8
+        Info (286033): Parameter WIDTHAD_A set to 3
+        Info (286033): Parameter NUMWORDS_A set to 8
+        Info (286033): Parameter WIDTH_B set to 8
+        Info (286033): Parameter WIDTHAD_B set to 3
+        Info (286033): Parameter NUMWORDS_B set to 8
+        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
+        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
+        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
+        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
+        Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
+        Info (286033): Parameter INDATA_ACLR_A set to NONE
+        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
+        Info (286033): Parameter INIT_FILE set to db/processador_mason.ram0_memoriaAdress_e716e8fa.hdl.mif
+        Info (286033): Parameter READ_DURING_WRITE_MODE_MIXED_PORTS set to OLD_DATA
+        Info (286033): Parameter RDCONTROL_REG_B set to CLOCK0
+Info (12130): Elaborated megafunction instantiation "memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0"
+Info (12133): Instantiated megafunction "memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
+    Info (12134): Parameter "WIDTH_A" = "8"
+    Info (12134): Parameter "WIDTHAD_A" = "3"
+    Info (12134): Parameter "NUMWORDS_A" = "8"
+    Info (12134): Parameter "WIDTH_B" = "8"
+    Info (12134): Parameter "WIDTHAD_B" = "3"
+    Info (12134): Parameter "NUMWORDS_B" = "8"
+    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
+    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
+    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
+    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
+    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
+    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
+    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
+    Info (12134): Parameter "INIT_FILE" = "db/processador_mason.ram0_memoriaAdress_e716e8fa.hdl.mif"
+    Info (12134): Parameter "READ_DURING_WRITE_MODE_MIXED_PORTS" = "OLD_DATA"
+    Info (12134): Parameter "RDCONTROL_REG_B" = "CLOCK0"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_c502.tdf
+    Info (12023): Found entity 1: altsyncram_c502 File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/db/altsyncram_c502.tdf Line: 28
+Warning (13012): Latch ual:port_map_ual|zero has unsafe behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 11
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc:port_map_pc|portOUT[4] File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/pc.vhd Line: 16
+Warning (13012): Latch ual:port_map_ual|in_tempZero has unsafe behavior File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/ual.vhd Line: 50
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal pc:port_map_pc|portOUT[7] File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/componentes/pc.vhd Line: 16
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "out_out_rom[3]" is stuck at GND File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 8
+    Warning (13410): Pin "out_rs[1]" is stuck at GND File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 10
+    Warning (13410): Pin "out_endereco[3]" is stuck at GND File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 12
+    Warning (13410): Pin "out_out_overflow" is stuck at GND File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/Processador_XFOX.vhd Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "memoriaAdress:port_map_memoriaAdress|altsyncram:ram_rtl_0|altsyncram_c502:auto_generated|ALTSYNCRAM" File: C:/Users/victo/Desktop/AOC_MarcosJasson_UFRR_2020-main/Processador_Mason_Marcos_Jasonn/db/altsyncram_c502.tdf Line: 39
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 242 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 69 output pins
+    Info (21061): Implemented 163 logic cells
+    Info (21064): Implemented 8 RAM segments
+    Info (21062): Implemented 1 DSP elements
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 4885 megabytes
+    Info: Processing ended: Thu Mar 10 09:35:54 2022
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:16
+
+

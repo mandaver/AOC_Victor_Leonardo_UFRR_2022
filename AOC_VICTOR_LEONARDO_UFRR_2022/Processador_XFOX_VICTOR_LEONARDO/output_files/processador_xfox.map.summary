@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Thu Mar 10 10:32:35 2022
+Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+Revision Name : processador_xfox
+Top-level Entity Name : processador_XFOX
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 24
+Total pins : 70
+Total virtual pins : 0
+Total block memory bits : 32
+Total DSP Blocks : 1
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0
